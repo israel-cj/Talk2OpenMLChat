@@ -1,12 +1,29 @@
 
 import pandas as pd
+import os
+import torch
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain.document_loaders import DataFrameLoader
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+
+# Check if CUDA is available and set the environment variable accordingly
+if torch.cuda.is_available():
+    os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+    device = "cuda"
+else:
+    os.environ["CUDA_VISIBLE_DEVICES"] = ""
+    device = "cpu"
+
+print(f"Using device: {device}")
+
+model_name = "BAAI/bge-small-en"
+model_kwargs = {"device": device}
+encode_kwargs = {"normalize_embeddings": True}
+hf = HuggingFaceBgeEmbeddings(
+    model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
+)
 
 # crawl_df = pd.read_csv("openml_docs.csv")
 crawl_df = pd.read_csv("openml_docs_API_together.csv")
@@ -27,13 +44,6 @@ docs = loader.load()
 
 char_text_splitter = RecursiveCharacterTextSplitter(chunk_size=5000, chunk_overlap=0, separators=[" ", ",", "\n"])
 doc_texts = char_text_splitter.split_documents(docs)
-
-model_name = "BAAI/bge-small-en"
-model_kwargs = {"device": "cuda"}
-encode_kwargs = {"normalize_embeddings": True}
-hf = HuggingFaceBgeEmbeddings(
-    model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-)
 
 for doc in doc_texts:
     for md in doc.metadata:

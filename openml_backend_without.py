@@ -23,8 +23,6 @@ print(f"Using device: {device}")
 
 metadata = pd.read_csv("./semantic_search/ai_search/data/all_dataset_description.csv")
 model = 'llama3.1:70b'
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-
 rag_response_path = 'http://0.0.0.0:8000/' # modify depending on the server
 model_name = "BAAI/bge-small-en"
 model_kwargs = {"device": device}
