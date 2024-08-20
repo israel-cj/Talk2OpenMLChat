@@ -64,7 +64,7 @@ rag_response_path = 'http://0.0.0.0:8000/'
 
 Replace these lines with the appropriate paths and port numbers based on your setup.
 
-Running the Chatbot
+
 To run the chatbot with conversation history tracking:
 ```python
 python chat_openml.py
