@@ -51,7 +51,7 @@ The chat_openml_without.py script runs the chatbot without keeping track of the 
     
 
 6. **Run the backend for semantic search:**
-    - Follow the instructions from the [ai_search repository](https://github.com/openml-labs/ai_search/tree/main) to set up the backend.
+    - Follow the instructions from the [ai_search repository](https://github.com/openml-labs/ai_search/tree/main), get the CSV (`all_dataset_description.csv`) from running `training.py` and set up the backend. 
 
 ## Configuration
 
