@@ -12,7 +12,7 @@ Talk2OpenMLChat is a chatbot designed to interact with [OpenML](https://www.open
 
 
 ## Note on without
-The chat_openml_without.py script runs the chatbot without keeping track of the conversation history. This means each query is treated independently, without context from previous interactions.
+The chat_openml_without.py script runs the chatbot without keeping track of the conversation history. This means each query is treated independently, without context from previous interactions. On the other hand chat_openml.py keeps the history.
 
 ### Steps
 
