@@ -1,4 +1,4 @@
-from backend.openml_backend_without import agent_response
+from openml_backend_without import agent_response
 
 while True:
     print("########################################")
