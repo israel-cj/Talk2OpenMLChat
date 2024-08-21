@@ -38,7 +38,7 @@ The chat_openml_without.py script runs the chatbot without keeping track of the 
     - If you want to skip and go directly to step 6, you can download the SQL database from [this link](https://tuenl-my.sharepoint.com/:u:/g/personal/i_campero_jurado_tue_nl/EefZPL9EcV9Iukvs3dPBsn8BlQxBTFhHW4qPOwqMJYwRVg?e=bMANbq). Otherwise, the CSV file (`openml_docs_API_together.csv`) needs to be created by crawling the following URLs and their sublinks:
         - "https://openml.github.io/openml-python/main/"
         - "https://docs.openml.org/"
-    - Run the script to create the CSV:
+    - Run the script to create the CSV (inside `backend.cralwer`):
         ```sh
         python create_csv_for_crawler.py
         ```

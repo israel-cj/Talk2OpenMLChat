@@ -1,5 +1,6 @@
-import openml_backend
+from backend import openml_backend
 import uuid
+
 
 # Generate a unique session ID
 session_id = str(uuid.uuid4())
@@ -26,5 +27,5 @@ while True:
 
     # Chat with the webpage
     if prompt:
-        result = openml_backend.agent_response(id, prompt)
+        result, store = openml_backend.agent_response(id, prompt)
         print(result)
