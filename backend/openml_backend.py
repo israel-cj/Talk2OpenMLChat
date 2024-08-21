@@ -1,7 +1,7 @@
 from langchain_ollama import ChatOllama
 from crawler.search import openml_page_search
-from semantic_search.search import database_similarity_search
-from history.session import get_session_history
+from backend.semantic_search.search import database_similarity_search
+from backend.history.session import get_session_history
 print("Backend started")
 
 model = 'llama3.1:70b'
