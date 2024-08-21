@@ -1,4 +1,4 @@
-from backend import openml_backend_without
+from backend.openml_backend_without import agent_response
 
 while True:
     print("########################################")
@@ -22,5 +22,5 @@ while True:
 
     # Chat with the webpage
     if prompt:
-        result = openml_backend_without.agent_response(prompt)
+        result = agent_response(prompt)
         print(result)

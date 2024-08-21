@@ -1,4 +1,4 @@
-from backend import openml_backend
+from backend.openml_backend import agent_response
 import uuid
 
 
@@ -27,5 +27,5 @@ while True:
 
     # Chat with the webpage
     if prompt:
-        result, store = openml_backend.agent_response(id, prompt)
+        result, store = agent_response(id, prompt)
         print(result)
